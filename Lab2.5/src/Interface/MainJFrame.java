@@ -6,29 +6,25 @@
 package Interface;
 
 import Business.VitalSignHistory;
-import Business.VitalSigns;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author 123
+ * @author HP
  */
 public class MainJFrame extends javax.swing.JFrame {
-
-    double defaultMax = 140;
-    double defaultMin = 70;
 
     /**
      * Creates new form MainJFrame
      */
     private VitalSignHistory vsh;
-
+    private double defaultMax;
+    private double defaultMin;
     public MainJFrame() {
-        initComponents();
-        vsh = new VitalSignHistory();
+      initComponents();
+      vsh = new VitalSignHistory();  
+     
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,92 +34,169 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        splitPanel = new javax.swing.JSplitPane();
-        displayJPanel = new javax.swing.JPanel();
-        controlJpanel = new javax.swing.JPanel();
-        createBtn = new javax.swing.JButton();
-        viewBtn = new javax.swing.JButton();
+        SplitPane = new javax.swing.JSplitPane();
+        createJPanel = new javax.swing.JPanel();
+        btnCreate = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        maxBpTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        minBpTextField = new javax.swing.JTextField();
+        btnAbnormal = new javax.swing.JButton();
+        viewJPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
-        splitPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
-
-        displayJPanel.setPreferredSize(new java.awt.Dimension(850, 800));
-
-        javax.swing.GroupLayout displayJPanelLayout = new javax.swing.GroupLayout(displayJPanel);
-        displayJPanel.setLayout(displayJPanelLayout);
-        displayJPanelLayout.setHorizontalGroup(
-            displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
-        );
-        displayJPanelLayout.setVerticalGroup(
-            displayJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
-        );
-
-        splitPanel.setRightComponent(displayJPanel);
-
-        controlJpanel.setPreferredSize(new java.awt.Dimension(150, 800));
-
-        createBtn.setLabel("Create Vital Sign");
-        createBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setText("Create Vital Signs");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createBtnActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
-        viewBtn.setLabel("View Vital Sign");
-        viewBtn.setMaximumSize(new java.awt.Dimension(70, 29));
-        viewBtn.setMinimumSize(new java.awt.Dimension(70, 29));
-        viewBtn.setPreferredSize(new java.awt.Dimension(70, 29));
-        viewBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setText("View Vital Signs");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewBtnActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout controlJpanelLayout = new javax.swing.GroupLayout(controlJpanel);
-        controlJpanel.setLayout(controlJpanelLayout);
-        controlJpanelLayout.setHorizontalGroup(
-            controlJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlJpanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(createBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jLabel1.setText("MAX_BP :");
+
+        maxBpTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxBpTextFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("MIN_BP :");
+
+        minBpTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minBpTextFieldActionPerformed(evt);
+            }
+        });
+
+        btnAbnormal.setText("Abnormal");
+        btnAbnormal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbnormalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout createJPanelLayout = new javax.swing.GroupLayout(createJPanel);
+        createJPanel.setLayout(createJPanelLayout);
+        createJPanelLayout.setHorizontalGroup(
+            createJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(createJPanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(createJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(minBpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(createJPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2))
+                    .addComponent(maxBpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(createJPanelLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(createJPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(createJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAbnormal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        controlJpanelLayout.setVerticalGroup(
-            controlJpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlJpanelLayout.createSequentialGroup()
+        createJPanelLayout.setVerticalGroup(
+            createJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(createJPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(btnCreate)
+                .addGap(29, 29, 29)
+                .addComponent(btnView)
                 .addGap(18, 18, 18)
-                .addComponent(createBtn)
-                .addGap(27, 27, 27)
-                .addComponent(viewBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(maxBpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(minBpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAbnormal)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
-        splitPanel.setLeftComponent(controlJpanel);
+        SplitPane.setLeftComponent(createJPanel);
 
-        getContentPane().add(splitPanel, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout viewJPanelLayout = new javax.swing.GroupLayout(viewJPanel);
+        viewJPanel.setLayout(viewJPanelLayout);
+        viewJPanelLayout.setHorizontalGroup(
+            viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 424, Short.MAX_VALUE)
+        );
+        viewJPanelLayout.setVerticalGroup(
+            viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 383, Short.MAX_VALUE)
+        );
+
+        SplitPane.setRightComponent(viewJPanel);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SplitPane)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SplitPane, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBtnActionPerformed
-        // TODO add your handling code here:
-        ViewVitalJPanel viewPanel = new ViewVitalJPanel(vsh);
-        splitPanel.setRightComponent(viewPanel);
-    }//GEN-LAST:event_viewBtnActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        CreatevitalJPanel createJPanel =new CreatevitalJPanel(vsh);
+        SplitPane.setRightComponent(createJPanel);
+        
 
-    private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
-        // TODO add your handling code here:
-        CreateVitalJPanel createPanel = new CreateVitalJPanel(vsh);
-        splitPanel.setRightComponent(createPanel);
-    }//GEN-LAST:event_createBtnActionPerformed
+    }//GEN-LAST:event_btnCreateActionPerformed
 
-    /**
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+       ViewVitalSignJPanel viewPanel = new ViewVitalSignJPanel(vsh);
+       SplitPane.setRightComponent(viewPanel);
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void maxBpTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxBpTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maxBpTextFieldActionPerformed
+
+    private void minBpTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minBpTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_minBpTextFieldActionPerformed
+
+    private void btnAbnormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbnormalActionPerformed
+        String maxBp = maxBpTextField.getText();
+        try{
+           defaultMax = Double.parseDouble(maxBp);
+       }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, maxBp + "Enter a valid number ");
+        }
+        
+        String minBp = minBpTextField.getText();
+        try{
+           defaultMin = Double.parseDouble(minBp);
+       }
+        catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, minBp + "Enter a valid number ");
+        }
+        AbnormalVitalsSignJPanel abnormalPanel = new AbnormalVitalsSignJPanel(vsh, defaultMax, defaultMin);
+        SplitPane.setRightComponent(abnormalPanel);
+    }//GEN-LAST:event_btnAbnormalActionPerformed
+        /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -149,9 +222,6 @@ public class MainJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -160,12 +230,18 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel controlJpanel;
-    private javax.swing.JButton createBtn;
-    private javax.swing.JPanel displayJPanel;
-    private javax.swing.JSplitPane splitPanel;
-    private javax.swing.JButton viewBtn;
+    private javax.swing.JSplitPane SplitPane;
+    private javax.swing.JButton btnAbnormal;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnView;
+    private javax.swing.JPanel createJPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField maxBpTextField;
+    private javax.swing.JTextField minBpTextField;
+    private javax.swing.JPanel viewJPanel;
     // End of variables declaration//GEN-END:variables
 }
