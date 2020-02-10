@@ -131,7 +131,8 @@ public class CreateProductJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
             String priceText = txtPrice.getText();
-            try{
+            //try-catch block for price and availability text fields//
+            try{                                
                 Double.parseDouble(priceText);
             } catch(NumberFormatException e){
                 e.printStackTrace();
